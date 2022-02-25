@@ -9,7 +9,7 @@ Allows the user to select lowercase and uppercase letters, numbers and special c
 
 ## Screenshot
 
-![Password Generator](https://faceless128.github.io/password-generator/screenshot.png)
+![Password Generator](./assets/images/screenshot.png)
 
 ## Live Demonstration
 

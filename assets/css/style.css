@@ -1,3 +1,4 @@
+/* style defaults */
 *,
 *::before,
 *::after {
@@ -12,6 +13,7 @@ body,
   padding: 0;
 }
 
+/* style for body */
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
@@ -23,6 +25,7 @@ body {
   padding-right: 20px;
 }
 
+/* style for header */
 header {
   text-align: center;
   padding: 20px;
@@ -30,6 +33,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* style for card layout */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -71,7 +75,7 @@ header {
   display: block;
   clear: both;
 }
-
+/* style for button */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -97,6 +101,7 @@ button[disabled] {
   float: right;
 }
 
+/* style fo password area */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -118,6 +123,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* media queries for smaller screen sizes */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
