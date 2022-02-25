@@ -9,9 +9,9 @@ var passwordLength = function () {
   howLong = window.prompt("How long would you like your password to be? Please enter a number between 8 and 128.");
   howLong = parseInt(howLong);
   if (howLong >= 8 && howLong <= 128) {
-    console.log(howLong)
     addOptions();
   } else {
+    // remind them of the limits and ask them again
     window.alert("Please create a password between 8 and 128 characters in length.")
     passwordLength();
   }
@@ -19,6 +19,7 @@ var passwordLength = function () {
 
 // select options for password
 var addOptions = function () {
+  passwordArray = "";
   var confirmLower = window.confirm("would you like lowercase letters in your password?")
   if (confirmLower) {
     var passwordLower = "abcdefghijklmnopqrstuvwxyz";
@@ -35,26 +36,23 @@ var addOptions = function () {
   if (confirmSpecial) {
     var passwordSpecial = "!#$%&@~;?^";
   }
+  // make sure they picked at least one of the four choices or ask them again
   if (!passwordLower && !passwordUpper && !passwordNumbers && !passwordSpecial) { addOptions() }
 
-  console.log(password)
+ // combine the selected options into one
   if (passwordLower !== "" && passwordLower !== null && passwordLower !== undefined) {passwordArray = passwordArray + passwordLower}
   if (passwordUpper !== "" && passwordUpper !== null & passwordUpper !== undefined) {passwordArray = passwordArray + passwordUpper}
   if (passwordNumbers !== "" && passwordNumbers !== null && passwordNumbers !== undefined) {passwordArray = passwordArray + passwordNumbers}
   if (passwordSpecial !== "" && passwordSpecial !== null && passwordSpecial !== undefined) {passwordArray = passwordArray + passwordSpecial}
-  console.log(passwordArray, passwordArray.length)
 }
 
- // make password the requested length
+ // generate password of the requested length and options
 var generatePassword = function() {
   passwordVal = ""
   passwordLength();
   for (let p = 0; p < howLong; p++) {
-    console.log(howLong)
     passwordVal = passwordVal + passwordArray[Math.floor(Math.random() * passwordArray.length)];
-    console.log(passwordVal)
   }
-  console.log(passwordVal)
     return passwordVal;
 }
 
